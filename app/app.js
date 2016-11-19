@@ -12,6 +12,8 @@ const Router = ReactRouter.Router;
 
 const Link = ReactRouter.Link;
 
+const PureRenderMixin = require('react-addons-pure-render-mixin')
+
 const samples = require('./sample-data');
 
 var App = React.createClass({
@@ -124,12 +126,14 @@ var ConversationPane = React.createClass({
 })
 
 var Message = React.createClass({
+    mixins:[PureRenderMixin],
     render: function () {
         return <p>{this.props.who}said : {this.props.text}</p>
     }
 })
 
 var StorePane = React.createClass({
+    mixins:[PureRenderMixin],
     renderStore: function (store) {
         return <Store key={store} index={store} details={this.props.stores[store]} />;
     },
