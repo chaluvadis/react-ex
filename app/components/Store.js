@@ -30,19 +30,3 @@ class Store extends React.Component {
 }
 
 export default Store;
-
-// var Store = React.createClass({
-//     getCount: function(status)  {
-//         return this.props.details.orders.filter((n) => { return n.status === status }).length;
-//     },
-//     render: function() {
-//         return (
-//             <li>
-//                 <p>{this.props.index}</p>
-//                 <p> Orders Confirmed : {this.getCount("Confirmed")}</p>
-//                 <p> Orders In The Oven : {this.getCount("In The Oven")}</p>
-//                 <p> Orders Delivered : {this.getCount("Delivered")}</p>
-//             </li>
-//         )
-//     }
-// });

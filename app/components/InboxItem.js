@@ -1,17 +1,10 @@
 import React from 'react';
 
-import ReactRouter from 'react-router';
+import {Link} from 'react-router';
 
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 import autoBind from 'react-autobind';
-
-const Route = ReactRouter.Route;
-
-const Router = ReactRouter.Router;
-
-const Link = ReactRouter.Link;
-
 
 class InboxItem extends React.Component {
     constructor(props) {
@@ -25,7 +18,7 @@ class InboxItem extends React.Component {
     }
 
     messageSummary(conversation) {
-        var lastMessage = conversations.sort(this.sortByDate)[0];
+        var lastMessage = conversation.sort(this.sortByDate)[0];
         return lastMessage.who + ' said: "' + lastMessage.text + '" @ ' + lastMessage.time.toDateString();
     }
 

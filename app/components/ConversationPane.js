@@ -6,6 +6,8 @@ import autoBind from 'react-autobind';
 
 import Message from './Message';
 
+import samples from '../sample-data';
+
 class ConversationPane extends React.Component {
 
     constructor(props) {
@@ -16,12 +18,12 @@ class ConversationPane extends React.Component {
     loadConversationData(human) {
         this.setState({ conversation: samples.humans[human].conversations })
     }
-    //Handle the user navigates to /conversation/:human
+    // Handle when User navigates from / to /conversation/:human
     componentWillMount() {
         this.loadConversationData(this.props.params.human);
     }
-    //When a user navigates from existing conversation
-    componetWillReceiveProps(nextProps) {
+    // Handle when User navigates between conversations
+    componentWillReceiveProps(nextProps) {
         this.loadConversationData(nextProps.params.human);
     }
     renderMessage(val) {

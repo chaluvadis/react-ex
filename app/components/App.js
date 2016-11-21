@@ -15,14 +15,14 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         autoBind(this);
-    }
-
-    getInitialState() {
-        return {
+        
+        this.state = {
             "humans": {},
             "stores": {}
         }
     }
+
+
 
     loadSampleData() {
         this.setState(samples);
